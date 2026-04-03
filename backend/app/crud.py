@@ -32,13 +32,13 @@ def get_transactions(limit=50):
     transactions = []
     for row in rows:
         transactions.append({
-            "id": row[0],
-            "time": row[1],
-            "amount": row[2],
-            "fraud_probability": row[3],
-            "decision": row[4],
-            "created_at": row[5]
-        })
+    "id": int(row[0]),
+    "time": float(row[1]),
+    "amount": float(row[2]),
+    "fraud_probability": float(row[3]),
+    "decision": str(row[4]),
+    "created_at": str(row[5])
+    })
 
     return transactions
 
