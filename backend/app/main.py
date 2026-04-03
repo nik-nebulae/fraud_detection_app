@@ -2,9 +2,16 @@ from fastapi import FastAPI
 from .simulator import start_simulation, stop_simulation
 from .crud import get_transactions
 from .database import create_table
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # allow all (for dev)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Initialize DB on startup
 @app.on_event("startup")
