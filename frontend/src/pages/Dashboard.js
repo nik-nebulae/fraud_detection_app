@@ -75,24 +75,65 @@ const pieData = [
 const [prevIds, setPrevIds] = useState([]);
 
   return (
-    <Container>
+    <Container
+  sx={{
+    minHeight: "100vh",
+    background: "linear-gradient(135deg, #0f172a, #1e293b, #020617)",
+    paddingTop: 3,
+    paddingBottom: 3,
+    animation: "fadeIn 0.8s ease"
+  }}
+>
       <Typography variant="h4" align="center" sx={{ mt: 3 }}>
         Fraud Detection Dashboard
       </Typography>
 
       <Box display="flex" justifyContent="center" gap={2} sx={{ my: 3 }}>
-        <Button variant="contained" color="success" onClick={handleStart}>
-          Start Simulation
-        </Button>
+      <Button
+  variant="contained"
+  onClick={handleStart}
+  sx={{
+    background: "linear-gradient(45deg, #4caf50, #81c784)",
+    boxShadow: "0 4px 15px rgba(76,175,80,0.4)",
+    "&:hover": {
+      boxShadow: "0 6px 20px rgba(76,175,80,0.7)"
+    }
+  }}
+>
+  Start Simulation
+</Button>
 
-        <Button variant="contained" color="error" onClick={handleStop}>
-          Stop Simulation
-        </Button>
+<Button
+  variant="contained"
+  onClick={handleStop}
+  sx={{
+    background: "linear-gradient(45deg, #f44336, #e57373)",
+    boxShadow: "0 4px 15px rgba(244,67,54,0.4)",
+    "&:hover": {
+      boxShadow: "0 6px 20px rgba(244,67,54,0.7)"
+    }
+  }}
+>
+  Stop Simulation
+</Button>
       </Box>
       <Grid container spacing={3} sx={{ mb: 3 }}>
 
   <Grid item xs={12} md={3}>
-    <Card sx={{ borderRadius: 3 }}>
+  <Card
+  sx={{
+    borderRadius: 3,
+    background: "rgba(255,255,255,0.05)",
+    backdropFilter: "blur(10px)",
+    border: "1px solid rgba(255,255,255,0.1)",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+    transition: "0.3s",
+    "&:hover": {
+      transform: "translateY(-4px)",
+      boxShadow: "0 12px 40px rgba(0,0,0,0.5)"
+    }
+  }}
+>
       <CardContent>
         <Typography variant="subtitle2">Total Transactions</Typography>
         <Typography variant="h5">{total}</Typography>
@@ -101,7 +142,20 @@ const [prevIds, setPrevIds] = useState([]);
   </Grid>
 
   <Grid item xs={12} md={3}>
-    <Card sx={{ borderRadius: 3 }}>
+  <Card
+  sx={{
+    borderRadius: 3,
+    background: "rgba(255,255,255,0.05)",
+    backdropFilter: "blur(10px)",
+    border: "1px solid rgba(255,255,255,0.1)",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+    transition: "0.3s",
+    "&:hover": {
+      transform: "translateY(-4px)",
+      boxShadow: "0 12px 40px rgba(0,0,0,0.5)"
+    }
+  }}
+>
       <CardContent>
         <Typography variant="subtitle2">Fraud Transactions</Typography>
         <Typography variant="h5" color="error">{fraud}</Typography>
@@ -110,7 +164,20 @@ const [prevIds, setPrevIds] = useState([]);
   </Grid>
 
   <Grid item xs={12} md={3}>
-    <Card sx={{ borderRadius: 3 }}>
+  <Card
+  sx={{
+    borderRadius: 3,
+    background: "rgba(255,255,255,0.05)",
+    backdropFilter: "blur(10px)",
+    border: "1px solid rgba(255,255,255,0.1)",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+    transition: "0.3s",
+    "&:hover": {
+      transform: "translateY(-4px)",
+      boxShadow: "0 12px 40px rgba(0,0,0,0.5)"
+    }
+  }}
+>
       <CardContent>
         <Typography variant="subtitle2">Safe Transactions</Typography>
         <Typography variant="h5" color="success.main">{safe}</Typography>
@@ -119,7 +186,20 @@ const [prevIds, setPrevIds] = useState([]);
   </Grid>
 
   <Grid item xs={12} md={3}>
-    <Card sx={{ borderRadius: 3 }}>
+  <Card
+  sx={{
+    borderRadius: 3,
+    background: "rgba(255,255,255,0.05)",
+    backdropFilter: "blur(10px)",
+    border: "1px solid rgba(255,255,255,0.1)",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+    transition: "0.3s",
+    "&:hover": {
+      transform: "translateY(-4px)",
+      boxShadow: "0 12px 40px rgba(0,0,0,0.5)"
+    }
+  }}
+>
       <CardContent>
         <Typography variant="subtitle2">Fraud Rate</Typography>
         <Typography variant="h5">{fraudRate}%</Typography>
@@ -144,6 +224,9 @@ const [prevIds, setPrevIds] = useState([]);
       stroke="#4caf50"
       strokeWidth={3}
       dot={false}
+      style={{
+        filter: "drop-shadow(0 0 6px rgba(76,175,80,0.7))"
+      }}
     />
   </LineChart>
 </ResponsiveContainer>
@@ -169,7 +252,13 @@ const [prevIds, setPrevIds] = useState([]);
 
 </Grid>
 
-      <Paper>
+<Paper
+  sx={{
+    background: "rgba(255,255,255,0.05)",
+    backdropFilter: "blur(10px)",
+    borderRadius: 3
+  }}
+>
         <Table>
           <TableHead>
             <TableRow>
